@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  serial_number: MyString
+  provisioned_at: 2016-06-11 15:35:39
+  activated_at: 2016-06-11 15:35:39
+  disassociated_at: 2016-06-11 15:35:39
+  merchant_id: 1
+
+two:
+  serial_number: MyString
+  provisioned_at: 2016-06-11 15:35:39
+  activated_at: 2016-06-11 15:35:39
+  disassociated_at: 2016-06-11 15:35:39
+  merchant_id: 1

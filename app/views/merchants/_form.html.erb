@@ -1,0 +1,45 @@
+<%= form_for(@merchant) do |f| %>
+  <% if @merchant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@merchant.errors.count, "error") %> prohibited this merchant from being saved:</h2>
+
+      <ul>
+      <% @merchant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :merchant_plan_name %><br>
+    <%= f.text_field :merchant_plan_name %>
+  </div>
+  <div class="field">
+    <%= f.label :is_qsr %><br>
+    <%= f.number_field :is_qsr %>
+  </div>
+  <div class="field">
+    <%= f.label :is_demo %><br>
+    <%= f.check_box :is_demo %>
+  </div>
+  <div class="field">
+    <%= f.label :mcc_code %><br>
+    <%= f.number_field :mcc_code %>
+  </div>
+  <div class="field">
+    <%= f.label :merchant_type_id %><br>
+    <%= f.number_field :merchant_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :clover_category %><br>
+    <%= f.text_field :clover_category %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

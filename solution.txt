@@ -1,0 +1,36 @@
+Solutions: 
+
+
+- How many merchants and of what type?
+
+A: There are now 93000 merchants and 297 types in the mearchant.csv file
+
+Merchant.all.count
+MerchantType.all.count
+
+
+- How many devices do merchants have and of what type?
+
+A: There are now 87215 devices and 3 types in the device.csv file
+
+
+ds = Device.select(:serial_number).distinct
+  Device Load (493.1ms)  SELECT DISTINCT "devices"."serial_number" FROM "devices"
+=> #<ActiveRecord::Relation [#<Device id: nil, serial_number: "C010UC41351058">, #<Device id: nil, serial_number: "C021UQ51930205">, #<Device id: nil, serial_number: "C010UC41120278">, #<Device id: nil, serial_number: "C010UC41140550">, #<Device id: nil, serial_number: "C010UN42540133">, #<Device id: nil, serial_number: "C021UQ51930208">, #<Device id: nil, serial_number: "C021UQ51970128">, #<Device id: nil, serial_number: "C021UQ51930329">, #<Device id: nil, serial_number: "C021UQ52920498">, #<Device id: nil, serial_number: "C021UQ51970237">, ...]>
+irb(main):006:0> ds.count
+   (299.9ms)  SELECT DISTINCT COUNT(DISTINCT "devices"."serial_number") FROM "devices"
+=> 87215
+
+
+- How long do merchants keep their devices?
+
+min:
+max:
+average: 
+
+
+- What types of issues have these merchants called into Customer Support about and for which devices?
+
+
+
+- What are some ways we could improve the merchant experience?

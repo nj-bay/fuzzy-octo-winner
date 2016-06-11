@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Merchants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Merchant plan name</th>
+      <th>Is qsr</th>
+      <th>Is demo</th>
+      <th>Mcc code</th>
+      <th>Merchant type</th>
+      <th>Clover category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @merchants.each do |merchant| %>
+      <tr>
+        <td><%= merchant.id %></td>
+        <td><%= merchant.merchant_plan_name %></td>
+        <td><%= merchant.is_qsr %></td>
+        <td><%= merchant.is_demo %></td>
+        <td><%= merchant.mcc_code %></td>
+        <td><%= merchant.merchant_type_id %></td>
+        <td><%= merchant.clover_category %></td>
+        <td><%= link_to 'Show', merchant %></td>
+        <td><%= link_to 'Edit', edit_merchant_path(merchant) %></td>
+        <td><%= link_to 'Destroy', merchant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Merchant', new_merchant_path %>

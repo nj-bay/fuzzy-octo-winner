@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  merchant_plan_name: MyString
+  is_qsr: 1
+  is_demo: false
+  mcc_code: 1
+  merchant_type_id: 1
+  clover_category: MyString
+
+two:
+  id: 1
+  merchant_plan_name: MyString
+  is_qsr: 1
+  is_demo: false
+  mcc_code: 1
+  merchant_type_id: 1
+  clover_category: MyString
