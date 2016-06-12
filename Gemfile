@@ -28,6 +28,8 @@ gem 'rails_admin'
 
 gem 'smarter_csv'
 
+gem 'acts_as_tree'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  case_number: 1
+  type_id: 1
+  sub_type_id: 1
+  sub_type_detail: MyString
+  case_ids: 1
+  serial_numbers: MyString
+
+two:
+  case_number: 1
+  type_id: 1
+  sub_type_id: 1
+  sub_type_detail: MyString
+  case_ids: 1
+  serial_numbers: MyString

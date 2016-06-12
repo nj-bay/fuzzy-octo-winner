@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cases
   resources :devices
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :merchants

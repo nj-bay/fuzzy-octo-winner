@@ -81,7 +81,7 @@ require 'smarter_csv'
 # puts "There are now #{DeviceType.count} rows in the  table"
 
 
-csv_cases = SmarterCSV.process(Rails.root.join('db', 'data', 'cases.csv'), {:col_sep => "\t"} )
+csv_cases = SmarterCSV.process(Rails.root.join('db', 'data', 'cases_test.csv'), {:col_sep => "\t"} )
 
 csv_cases.each do |row|
 	

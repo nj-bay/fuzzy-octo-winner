@@ -33,4 +33,42 @@ namespace :device do
 
   end
 
+
+  desc "Calculate the time of each device, and get min, max, and average"
+  task calculate_time: :environment do
+
+	first = DeviceRecord.first 
+	# byebug
+	if first.disassociated_at == nil 
+		duration = Time.now.to_i - first.provisioned_at.to_i
+	else 
+		duration = first.disassociated_at.to_i - first.provisioned_at.to_i
+	end	
+
+	min = duration
+	max = duration
+	sum = 0
+	number = DeviceRecord.all.count
+
+  	DeviceRecord.all.limit(100).each do |record|
+
+  		if record.disassociated_at == nil 
+			duration = Time.now.to_i - first.provisioned_at.to_i
+		else 
+			duration = first.disassociated_at.to_i - first.provisioned_at.to_i
+		end	
+		max = duration if duration > max and duration > 0 
+		min = duration if duration < min and duration > 0 
+		# sum = sum + duration
+  	end
+
+  	byebug
+  	# ave = sum / number
+
+  	puts "min length merchant have it is: #{Time.at(min)} "
+  	puts "max length merchant have it is: #{Time.at(max)} "
+  	# puts "ave length merchant have it is: #{ave.strftime("%H:%M:%S")} "
+  end
+
+
 end

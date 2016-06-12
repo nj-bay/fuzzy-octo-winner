@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160611223539) do
+ActiveRecord::Schema.define(version: 20160612184848) do
+
+  create_table "case_types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "parent_id"
+  end
+
+  create_table "cases", force: :cascade do |t|
+    t.integer  "case_number"
+    t.integer  "type_id"
+    t.integer  "sub_type_id"
+    t.string   "sub_type_detail"
+    t.integer  "case_ids"
+    t.string   "serial_numbers"
+    t.datetime "created_date"
+  end
 
   create_table "device_records", force: :cascade do |t|
     t.string   "serial_number"

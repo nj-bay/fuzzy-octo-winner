@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Case number:</strong>
+  <%= @case.case_number %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @case.type_id %>
+</p>
+
+<p>
+  <strong>Sub type:</strong>
+  <%= @case.sub_type_id %>
+</p>
+
+<p>
+  <strong>Sub type detail:</strong>
+  <%= @case.sub_type_detail %>
+</p>
+
+<p>
+  <strong>Case ids:</strong>
+  <%= @case.case_ids %>
+</p>
+
+<p>
+  <strong>Serial numbers:</strong>
+  <%= @case.serial_numbers %>
+</p>
+
+<%= link_to 'Edit', edit_case_path(@case) %> |
+<%= link_to 'Back', cases_path %>
