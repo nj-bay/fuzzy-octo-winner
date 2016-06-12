@@ -33,6 +33,14 @@ namespace :device do
 
   end
 
+  desc "Check the number of cases to each type device"
+  task check_device: :environment do
+
+
+
+  end
+
+
 
   desc "Calculate the time of each device, and get min, max, and average"
   task calculate_time: :environment do
@@ -47,27 +55,41 @@ namespace :device do
 
 	min = duration
 	max = duration
-	sum = 0
-	number = DeviceRecord.all.count
+	sum = 0.0
+	number = 0
 
-  	DeviceRecord.all.limit(100).each do |record|
+  	DeviceRecord.all.each do |record|
+  	
 
   		if record.disassociated_at == nil 
-			duration = Time.now.to_i - first.provisioned_at.to_i
+			duration = Time.now.to_i - record.provisioned_at.to_i
 		else 
-			duration = first.disassociated_at.to_i - first.provisioned_at.to_i
+			duration = record.disassociated_at.to_i - record.provisioned_at.to_i
 		end	
-		max = duration if duration > max and duration > 0 
-		min = duration if duration < min and duration > 0 
-		# sum = sum + duration
+
+		if duration > 0 
+			if duration > max
+				max = duration
+			else duration < min
+				min = duration
+			end
+
+			sum = sum + duration / 3600
+			number = number + 1
+		end 
+
+		puts "max #{max}"
+		puts "min #{min}"
+		puts "sum #{sum}"
+
   	end
 
-  	byebug
-  	# ave = sum / number
+  	ave = sum / number
 
-  	puts "min length merchant have it is: #{Time.at(min)} "
-  	puts "max length merchant have it is: #{Time.at(max)} "
-  	# puts "ave length merchant have it is: #{ave.strftime("%H:%M:%S")} "
+  	puts "min length merchant have it is: #{ min / 3600} hours"
+  	puts "max length merchant have it is: #{ max / 3600} hours"
+  	puts "ave length merchant have it is: #{ ave } hours"
+  	puts "Total Records merchant have it is: #{number} "
   end
 
 
